@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 110" width="900" height="110" role="img" aria-label="pixel cow-cat walking after a yarn ball">
+<title>cow-cat divider</title>
+<style>
+:root{
+--bg:#F0EEE6; --ink:#1F1E1D; --muted:#7D7A6F;
+--cat:#FFFFFF; --catsh:#E9E5DA; --patch:#2E2A26;
+--pink:#E8938C; --blush:#F2B3A8;
+--yarn:#E8837E; --yarnd:#C96058; --heart:#E06253; --spark:#E3A93C;
+--grass1:#A4C88B; --grass2:#8CB271; --tuft:#79A15E;
+--shadow:rgba(40,38,35,.18); --cell:#E4E1D4;
+--g1:#9BE9A8; --g2:#40C463; --g3:#30A14E; --g4:#216E39;
+--sky:#FFFFFF; --star:#D8D4C6;
+}
+@media (prefers-color-scheme:dark){
+:root{
+--bg:#262624; --ink:#F0EEE6; --muted:#8F8D85;
+--cat:#F2F0E9; --catsh:#DCD9CE; --patch:#26231F;
+--pink:#E8938C; --blush:#E89A8B;
+--yarn:#E8837E; --yarnd:#C96058; --heart:#E4685A; --spark:#E9B84C;
+--grass1:#43603F; --grass2:#374F34; --tuft:#54774E;
+--shadow:rgba(0,0,0,.4); --cell:#34332F;
+--g1:#0E4429; --g2:#006D32; --g3:#26A641; --g4:#39D353;
+--sky:#3A3937; --star:#8F8D85;
+}
+}
+
+.mono{font-family:ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
+.oc{transform-box:fill-box;transform-origin:50% 50%}
+.ob{transform-box:fill-box;transform-origin:50% 100%}
+.tailo{transform-box:fill-box;transform-origin:92% 88%}
+.pawo{transform-box:fill-box;transform-origin:50% 8%}
+
+.catW{animation:walkC 16s linear infinite}
+@keyframes walkC{from{transform:translateX(-190px)}to{transform:translateX(1040px)}}
+.rollW{animation:rollK .9s steps(8,end) infinite}
+@keyframes rollK{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.bobW{animation:bobK .28s steps(1,end) infinite}
+@keyframes bobK{0%,49.9%{transform:translateY(0)}50%,100%{transform:translateY(-2px)}}
+.gA{animation:gK .28s steps(1,end) infinite}
+.gB{animation:gK .28s steps(1,end) .14s infinite}
+@keyframes gK{0%,49.9%{transform:translateY(0)}50%,100%{transform:translateY(-3px)}}
+.tail{animation:tailSw 1.6s ease-in-out infinite alternate}
+@keyframes tailSw{from{transform:rotate(-10deg)}to{transform:rotate(12deg)}}
+.blinkg{animation:blinkK 3.8s linear infinite}
+@keyframes blinkK{0%,91%{transform:scaleY(1)}93%,95%{transform:scaleY(.12)}97%,100%{transform:scaleY(1)}}
+.gtw1{animation:gtwK 3s ease-in-out infinite}
+.gtw2{animation:gtwK 3s ease-in-out 1s infinite}
+.gtw3{animation:gtwK 3s ease-in-out 2s infinite}
+@keyframes gtwK{0%,100%{opacity:.5}50%{opacity:1}}
+.flower{animation:sway 3.6s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-3deg)}to{transform:rotate(3deg)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs><clipPath id="frame"><rect x="0" y="0" width="900" height="110" rx="12"/></clipPath></defs>
+<rect x="0" y="0" width="900" height="110" rx="12" fill="var(--bg)"/>
+<g clip-path="url(#frame)">
+  <rect x="140" y="26" width="8" height="8" rx="2" fill="var(--g2)" class="gtw1"/>
+  <rect x="320" y="40" width="8" height="8" rx="2" fill="var(--g1)" class="gtw2"/>
+  <rect x="520" y="22" width="8" height="8" rx="2" fill="var(--g3)" class="gtw3"/>
+  <rect x="700" y="36" width="8" height="8" rx="2" fill="var(--g2)" class="gtw1"/>
+  <rect x="830" y="30" width="8" height="8" rx="2" fill="var(--g1)" class="gtw2"/>
+
+  <rect x="0" y="84" width="900" height="12.5" fill="var(--grass1)"/>
+  <rect x="0" y="96" width="900" height="14" fill="var(--grass2)"/>
+  <g fill="var(--tuft)">
+    <g transform="translate(100,74)"><rect x="0" y="0" width="4" height="10"/><rect x="6" y="3" width="4" height="7"/></g>
+    <g transform="translate(260,76)"><rect x="0" y="0" width="4" height="8"/><rect x="6" y="2" width="4" height="6"/></g>
+    <g transform="translate(420,74)"><rect x="0" y="0" width="4" height="10"/><rect x="6" y="3" width="4" height="7"/></g>
+    <g transform="translate(580,76)"><rect x="0" y="0" width="4" height="8"/><rect x="6" y="2" width="4" height="6"/></g>
+    <g transform="translate(740,74)"><rect x="0" y="0" width="4" height="10"/><rect x="6" y="3" width="4" height="7"/></g>
+    <g transform="translate(860,76)"><rect x="0" y="0" width="4" height="8"/><rect x="6" y="2" width="4" height="6"/></g>
+  </g>
+  <g transform="translate(200,64)"><g class="flower ob"><rect x="6" y="12" width="4" height="8" fill="var(--tuft)"/>
+<rect x="4" y="0" width="4" height="4" fill="var(--cat)"/><rect x="0" y="4" width="4" height="4" fill="var(--cat)"/><rect x="8" y="4" width="4" height="4" fill="var(--cat)"/><rect x="4" y="8" width="4" height="4" fill="var(--cat)"/>
+<rect x="4" y="4" width="4" height="4" fill="var(--spark)"/></g></g>
+  <g transform="translate(640,64)"><g class="flower ob"><rect x="6" y="12" width="4" height="8" fill="var(--tuft)"/>
+<rect x="4" y="0" width="4" height="4" fill="var(--cat)"/><rect x="0" y="4" width="4" height="4" fill="var(--cat)"/><rect x="8" y="4" width="4" height="4" fill="var(--cat)"/><rect x="4" y="8" width="4" height="4" fill="var(--cat)"/>
+<rect x="4" y="4" width="4" height="4" fill="var(--spark)"/></g></g>
+
+  <g class="catW"><g transform="translate(118,62) scale(.8)"><g class="rollW oc"><path fill="var(--yarn)" d="M8,0 H20 V4 H24 V8 H28 V20 H24 V24 H20 V28 H8 V24 H4 V20 H0 V8 H4 V4 H8 Z"/>
+<g fill="var(--yarnd)"><rect x="6" y="6" width="16" height="3"/><rect x="4" y="13" width="20" height="3"/><rect x="8" y="20" width="14" height="3"/><rect x="24" y="11" width="7" height="3"/></g></g></g></g>
+  <g class="catW"><g class="bobW"><g transform="translate(0,29) scale(.8333)"><g>
+  <g class="tail tailo"><rect x="0" y="26" width="6" height="22" fill="var(--patch)"/><rect x="-5" y="19" width="8" height="8" fill="var(--cat)"/></g>
+  <g class="gB"><rect x="72" y="52" width="6" height="14" fill="var(--catsh)"/><rect x="12" y="52" width="6" height="14" fill="var(--catsh)"/></g>
+  <g class="gA"><rect x="24" y="52" width="6" height="14" fill="var(--cat)"/><g class="paw pawo"><rect x="60" y="52" width="6" height="14" fill="var(--cat)"/></g></g>
+  <path fill="var(--cat)" d="M60,0 H66 V6 H72 V12 H78 V6 H84 V0 H90 V12 H96 V36 H84 V54 H6 V30 H54 V12 H60 Z"/>
+  <rect x="6" y="48" width="78" height="6" fill="var(--catsh)"/>
+  <g fill="var(--patch)">
+    <rect x="6" y="30" width="30" height="12"/><rect x="6" y="42" width="24" height="6"/><rect x="12" y="48" width="12" height="6"/>
+    <rect x="48" y="36" width="12" height="12"/>
+    <rect x="54" y="12" width="16" height="6"/>
+  </g>
+  <g class="earF ob" fill="var(--patch)"><rect x="84" y="0" width="6" height="6"/><rect x="78" y="6" width="12" height="6"/></g>
+  <rect x="64" y="7" width="4" height="4" fill="var(--pink)"/>
+  <rect x="54" y="30" width="24" height="5" fill="var(--g3)"/>
+  <rect x="63" y="35" width="5" height="5" fill="var(--spark)"/>
+  <g class="blinkg oc"><rect x="78" y="18" width="6" height="6" fill="var(--patch)"/><rect x="82" y="19" width="2" height="2" fill="var(--cat)"/></g>
+  <rect x="91" y="25" width="5" height="4" fill="var(--pink)"/>
+  <rect x="78" y="27" width="8" height="3" fill="var(--blush)" opacity=".85"/>
+  <rect x="96" y="21" width="10" height="2" fill="var(--muted)" opacity=".75"/>
+  <rect x="96" y="26" width="10" height="2" fill="var(--muted)" opacity=".75"/>
+</g></g></g></g>
+</g>
+</svg>
