@@ -254,7 +254,7 @@ def build_banner():
 
     # ---- contribution grid (sky) ----
     gx, gy, pitch = 688, 34, 11
-    filled, twinkle, pops = banner_grid_from_weeks()
+    filled, twinkle, pops = banner_grid_from_weeks(cols=14)
     grid = []
     for r in range(4):
         for c in range(16):

@@ -231,15 +231,15 @@
   <rect x="831" y="67" width="8" height="8" rx="2" fill="var(--cell)"/>
   <rect x="842" y="67" width="8" height="8" rx="2" fill="var(--cell)"/>
   <rect x="853" y="67" width="8" height="8" rx="2" fill="var(--cell)"/>
-  <rect x="820" y="56" width="8" height="8" rx="2" fill="var(--g2)"/>
-  <rect x="831" y="34" width="8" height="8" rx="2" fill="var(--g2)"/>
-  <rect class="gtw3" x="831" y="45" width="8" height="8" rx="2" fill="var(--g4)"/>
-  <rect x="831" y="56" width="8" height="8" rx="2" fill="var(--g1)"/>
-  <rect class="gtw2" x="853" y="34" width="8" height="8" rx="2" fill="var(--g4)"/>
-  <rect class="gtw1" x="853" y="56" width="8" height="8" rx="2" fill="var(--g4)"/>
-  <rect class="cp1 oc" x="831" y="34" width="8" height="8" rx="2" fill="var(--g2)" opacity="0"/>
-  <rect class="cp2 oc" x="820" y="56" width="8" height="8" rx="2" fill="var(--g2)" opacity="0"/>
-  <rect class="cp3 oc" x="831" y="56" width="8" height="8" rx="2" fill="var(--g1)" opacity="0"/>
+  <rect x="798" y="56" width="8" height="8" rx="2" fill="var(--g2)"/>
+  <rect x="809" y="34" width="8" height="8" rx="2" fill="var(--g2)"/>
+  <rect class="gtw3" x="809" y="45" width="8" height="8" rx="2" fill="var(--g4)"/>
+  <rect x="809" y="56" width="8" height="8" rx="2" fill="var(--g1)"/>
+  <rect class="gtw2" x="831" y="34" width="8" height="8" rx="2" fill="var(--g4)"/>
+  <rect class="gtw1" x="831" y="56" width="8" height="8" rx="2" fill="var(--g4)"/>
+  <rect class="cp1 oc" x="809" y="34" width="8" height="8" rx="2" fill="var(--g2)" opacity="0"/>
+  <rect class="cp2 oc" x="798" y="56" width="8" height="8" rx="2" fill="var(--g2)" opacity="0"/>
+  <rect class="cp3 oc" x="809" y="56" width="8" height="8" rx="2" fill="var(--g1)" opacity="0"/>
 </g>
 
 <!-- ground -->
