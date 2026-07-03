@@ -79,6 +79,61 @@ FLOWER = """<rect x="6" y="12" width="4" height="__STEM__" fill="var(--tuft)"/>
 <rect x="4" y="0" width="4" height="4" fill="var(--sky2)"/><rect x="0" y="4" width="4" height="4" fill="var(--sky2)"/><rect x="8" y="4" width="4" height="4" fill="var(--sky2)"/><rect x="4" y="8" width="4" height="4" fill="var(--sky2)"/>
 <rect x="4" y="4" width="4" height="4" fill="var(--spark)"/>""".replace('var(--sky2)', 'var(--cat)')
 
+# ----------------------------------------------------------- real GH activity
+LEVELMAP = {'NONE': 0, 'FIRST_QUARTILE': 1, 'SECOND_QUARTILE': 2, 'THIRD_QUARTILE': 3, 'FOURTH_QUARTILE': 4}
+
+def _load_weeks():
+    import subprocess, json
+    q = 'query{viewer{contributionsCollection{contributionCalendar{weeks{contributionDays{contributionCount contributionLevel}}}}}}'
+    out = subprocess.run(['gh', 'api', 'graphql', '-f', f'query={q}'], capture_output=True, text=True)
+    if out.returncode != 0:
+        print('warn: could not fetch contributions, using empty grid:', out.stderr.strip())
+        return []
+    data = json.loads(out.stdout)
+    return data['data']['viewer']['contributionsCollection']['contributionCalendar']['weeks']
+
+WEEKS = _load_weeks()
+
+def banner_grid_from_weeks(cols=16, rows=4, day_idx=(0, 2, 4, 6)):
+    wk = WEEKS[-cols:] if WEEKS else []
+    filled, twinkle, pops = {}, {}, {}
+    tw_classes = ['gtw1', 'gtw2', 'gtw3']
+    cp_classes = ['cp1', 'cp2', 'cp3', 'cp4']
+    cells = []  # (level, c, r)
+    for c, week in enumerate(wk):
+        days = week['contributionDays']
+        for r, di in enumerate(day_idx[:rows]):
+            if di >= len(days):
+                continue
+            lvl = LEVELMAP.get(days[di]['contributionLevel'], 0)
+            if lvl > 0:
+                filled[(c, r)] = f'g{lvl}'
+                cells.append((lvl, c, r))
+    cells.sort(reverse=True)
+    for i, (lvl, c, r) in enumerate(cells[:3]):
+        twinkle[(c, r)] = tw_classes[i % len(tw_classes)]
+    for i, (lvl, c, r) in enumerate(cells[3:7]):
+        pops[(c, r)] = (f'g{lvl}', cp_classes[i % len(cp_classes)])
+    return filled, twinkle, pops
+
+def garden_heights_from_weeks(cols=14, rows=6):
+    wk = WEEKS[-cols:] if WEEKS else []
+    H = [[0] * cols for _ in range(rows)]
+    best = (0, -1, -1)
+    for c, week in enumerate(wk):
+        days = week['contributionDays']
+        for r in range(rows):
+            if r >= len(days):
+                continue
+            cnt = days[r]['contributionCount']
+            lvl = LEVELMAP.get(days[r]['contributionLevel'], 0)
+            H[r][c] = lvl
+            if cnt > best[0]:
+                best = (cnt, r, c)
+    if best[0] > 0:
+        H[best[1]][best[2]] = min(6, H[best[1]][best[2]] + 2)
+    return H
+
 # ================================================================= BANNER
 def build_banner():
     css = """
@@ -199,10 +254,7 @@ def build_banner():
 
     # ---- contribution grid (sky) ----
     gx, gy, pitch = 688, 34, 11
-    filled = {(3,0):'g1',(9,0):'g1',(1,2):'g1',(5,1):'g2',(7,2):'g1',(10,2):'g2',(4,3):'g1',(8,3):'g1',(12,1):'g1',
-              (13,0):'g3',(15,0):'g4',(13,1):'g4',(15,1):'g2',(14,2):'g4',(13,3):'g2',(15,3):'g3'}
-    twinkle = {(15,0):'gtw1',(13,1):'gtw2',(14,2):'gtw3'}
-    pops = {(11,0):('g3','cp1'),(12,2):('g4','cp2'),(14,0):('g3','cp3'),(12,3):('g4','cp4')}
+    filled, twinkle, pops = banner_grid_from_weeks()
     grid = []
     for r in range(4):
         for c in range(16):
@@ -332,14 +384,7 @@ def build_banner():
 def build_garden():
     a, z = 16, 11
     X0, Y0 = 386, 64
-    H = [
-        [0,0,1,0,0,1,0,0,1,0,2,2,3,2],
-        [0,1,0,0,2,0,1,0,0,1,2,3,4,3],
-        [1,0,0,1,0,0,0,1,1,2,6,6,5,4],
-        [0,0,1,0,1,0,2,0,1,2,4,3,4,2],
-        [0,1,0,0,0,1,0,1,2,3,3,4,3,2],
-        [1,0,0,1,0,0,1,0,1,1,2,2,2,1],
-    ]
+    H = garden_heights_from_weeks()
     def lvl(h):
         return 1 if h == 1 else 2 if h == 2 else 3 if h == 3 else 4
 
